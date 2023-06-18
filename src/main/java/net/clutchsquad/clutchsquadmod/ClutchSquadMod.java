@@ -1,5 +1,8 @@
 package net.clutchsquad.clutchsquadmod;
 
+import net.clutchsquad.clutchsquadmod.item.ModCreativeModeTabs;
+import net.clutchsquad.clutchsquadmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -22,6 +25,8 @@ public class ClutchSquadMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -35,7 +40,14 @@ public class ClutchSquadMod
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
+
     {
+
+        if(event.getTab() == ModCreativeModeTabs.CLUTCHSQUAD_TAB){
+            event.accept(ModItems.BLACK_OPAL);
+            event.accept(ModItems.RAW_BLACK_OPAL);
+            event.accept(ModItems.HAMBURGER);
+        }
     }
 
 
