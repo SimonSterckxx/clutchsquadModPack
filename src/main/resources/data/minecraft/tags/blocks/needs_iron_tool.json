@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "clutchsquadmod:black_opal_ore",
+    "clutchsquadmod:deepslate_black_opal_ore",
+    "clutchsquadmod:endstone_black_opal_ore",
+    "clutchsquadmod:netherrack_black_opal_ore"
+  ]
+}
