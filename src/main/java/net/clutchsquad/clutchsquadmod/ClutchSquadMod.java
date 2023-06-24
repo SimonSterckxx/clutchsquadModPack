@@ -1,5 +1,6 @@
 package net.clutchsquad.clutchsquadmod;
 
+import net.clutchsquad.clutchsquadmod.block.ModBlocks;
 import net.clutchsquad.clutchsquadmod.item.ModCreativeModeTabs;
 import net.clutchsquad.clutchsquadmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -26,6 +27,7 @@ public class ClutchSquadMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -47,6 +49,15 @@ public class ClutchSquadMod
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
             event.accept(ModItems.HAMBURGER);
+            event.accept(ModBlocks.BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.BLACK_OPAL_ORE);
+            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);            event.accept(ModBlocks.BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
+        }
+
+        if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.BLACK_OPAL_BLOCK);
         }
     }
 
